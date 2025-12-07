@@ -1,21 +1,16 @@
-self.addEventListener("install", e => {
-  e.waitUntil(
-    caches.open("runner-game").then(cache => {
-      return cache.addAll([
-        "/",
-        "/index.html",
-        "/css/styles.css",
-        "/js/main.js"
-      ]);
-    })
-  );
+const CACHE_NAME = 'mrunner-cache-v1';
+const FILES = [
+  '/',
+  '/index.html',
+  '/css/styles.css'
+];
+self.addEventListener('install', evt=>{
+  evt.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(FILES)));
   self.skipWaiting();
 });
-
-self.addEventListener("fetch", e => {
-  e.respondWith(
-    caches.match(e.request).then(response => {
-      return response || fetch(e.request);
-    })
-  );
+self.addEventListener('activate', evt=> {
+  evt.waitUntil(self.clients.claim());
+});
+self.addEventListener('fetch', evt=>{
+  evt.respondWith(caches.match(evt.request).then(res=>res || fetch(evt.request)));
 });
