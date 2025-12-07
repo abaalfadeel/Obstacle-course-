@@ -1,0 +1,16 @@
+{
+  "name": "My Runner Game",
+  "short_name": "RunnerGame",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#222",
+  "description": "A fast-paced endless runner game.",
+  "icons": [
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2B2B2B"
+}
