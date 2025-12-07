@@ -1,14 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>My Runner Game</title>
-  <link rel="manifest" href="manifest.json"/>
-  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="theme-color" content="#111111"/>
 </head>
 <body>
-  <div id="game-container"></div>
+  <!-- Canvas injected by PIXI -->
+  <div id="game-root"></div>
+
+  <!-- Overlays: HUD, Menus, Store -->
+  <div id="ui-root">
+    <div id="hud" class="overlay">
+      <div id="coins">Coins: <span id="coins-count">0</span></div>
+      <div id="score">Score: <span id="score-count">0</span></div>
+      <button id="btn-pause" class="small-btn">⏸</button>
+    </div>
+
+    <div id="menu" class="overlay center hidden">
+      <h1>Runner</h1>
+      <button id="btn-start" class="big-btn">بدء</button>
+      <button id="btn-store-open" class="big-btn">المتجر</button>
+    </div>
+
+    <div id="pause" class="overlay center hidden">
+      <h2>موقوف</h2>
+      <button id="btn-resume" class="big-btn">استئناف</button>
+      <button id="btn-restart" class="big-btn">إعادة</button>
+    </div>
+
+    <div id="store" class="overlay hidden">
+      <h2>المتجر</h2>
+      <div id="store-items"></div>
+      <button id="btn-store-close" class="big-btn">اغلاق</button>
+    </div>
+  </div>
+
+  <!-- PIXI -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/8.2.0/pixi.min.js"></script>
+
+  <!-- Game scripts -->
+  <script src="js/assets.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/pooling.js"></script>
+  <script src="js/camera.js"></script>
+
+  <script src="js/entities/soldier.js"></script>
+  <script src="js/entities/zombie.js"></script>
+  <script src="js/entities/obstacle.js"></script>
+  <script src="js/entities/pickup.js"></script>
+
+  <script src="js/ui/hud.js"></script>
+  <script src="js/ui/menu.js"></script>
+  <script src="js/ui/store.js"></script>
+  <script src="js/ui/pause.js"></script>
+
+  <script src="js/levels/level_config.js"></script>
+  <script src="js/levels/level1.js"></script>
+
   <script src="js/main.js"></script>
+
 </body>
 </html>
