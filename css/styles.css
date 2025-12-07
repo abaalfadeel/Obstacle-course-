@@ -1,11 +1,21 @@
-body {
-  margin: 0;
-  background: #222;
-  color: #fff;
-  font-family: Arial, sans-serif;
+:root {
+  --bg: #0f1113;
+  --panel: #17181a;
+  --accent: #1db954;
+  --text: #efefef;
 }
-#game-container {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
+html,body{height:100%;margin:0;padding:0;background:var(--bg);font-family: "Cairo", Arial, sans-serif; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
+#game-root{width:100%;height:100%;display:flex;justify-content:center;align-items:flex-start}
+/* Overlays */
+.overlay{position:fixed;left:0;right:0;top:0;padding:12px;pointer-events:auto}
+.center{top:20%;max-width:440px;margin:0 auto;background:var(--panel);border-radius:12px;padding:18px;text-align:center;color:var(--text);box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.hidden{display:none}
+.small-btn{background:var(--panel);color:var(--text);border:1px solid #333;padding:8px;border-radius:8px}
+.big-btn{display:block;width:90%;margin:8px auto;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:18px}
+#hud{top:6px;display:flex;justify-content:space-between;align-items:center;padding:8px;z-index:20}
+#coins, #score{color:var(--text);font-weight:600}
+#store{top:8%;left:6%;right:6%;bottom:8%;overflow:auto;padding:18px}
+#store-items{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.store-item{width:140px;background:#222;padding:8px;border-radius:8px;color:#fff;text-align:center}
+.store-item img{width:100%;height:100px;object-fit:contain}
+.small-text{font-size:12px;color:#ddd}
