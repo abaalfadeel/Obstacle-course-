@@ -1,18 +1,11 @@
-# My Runner Game
+# My Runner Game - Starter
 
-A fast-paced endless runner built with JavaScript.
+This is a 2D runner starter kit using PIXI.js with 3D-rendered sprites workflow (pre-rendered 3D -> spritesheets).
 
-## Features
+## How to run
+1. Place your sprite assets under `assets/spritesheets` matching names in `js/assets.js`.
+2. Open `index.html` in a modern browser (Chrome recommended).
+3. For mobile testing, upload repo to GitHub Pages and open URL on phone.
 
-- Procedurally generated levels
-- Multiple characters and enemies
-- Powerups and upgrades
-- Local saving and persistent progress
-
-## Setup
-
-Open `index.html` in your browser to play (no build steps required).
-
-## License
-
-MIT
+## Build to Android
+Use Capacitor:
